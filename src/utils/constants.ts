@@ -10,4 +10,6 @@ export const STATUS_CODE = {
 export const RESPONSE_MESSAGES = {
   NON_EXISTING_ENDPOINT: "You entered a non-existent endpoint",
   SERVER_ERROR: "500 Internal Server Error",
+  NOT_FOUND: "User not found",
+  INVALID_USER_ID: "userId is invalid (not uuid)",
 };

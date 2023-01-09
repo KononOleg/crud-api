@@ -1,4 +1,5 @@
 import { createServer } from "http";
+import { getUserById, getUsers } from "./crud/get";
 import { RESPONSE_MESSAGES, STATUS_CODE } from "./utils/constants";
 import { checkPath } from "./utils/utils";
 
@@ -7,9 +8,9 @@ const server = createServer(async (req, res) => {
     res.setHeader("Content-type", "application/json");
     if (req.url) {
       if (req.url === "/api/users" && req.method === "GET") {
-        // GET USERS
+        await getUsers(req, res);
       } else if (checkPath(req.url as string) && req.method === "GET") {
-        // GET USER
+        await getUserById(req, res);
       } else if (req.url === "/api/users" && req.method === "POST") {
         // CREATE USER
       } else if (checkPath(req.url as string) && req.method === "PUT") {
