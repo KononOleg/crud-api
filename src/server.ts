@@ -1,4 +1,5 @@
 import { createServer } from "http";
+import { createUser } from "./crud/create";
 import { deleteUser } from "./crud/delete";
 import { getUserById, getUsers } from "./crud/get";
 import { RESPONSE_MESSAGES, STATUS_CODE } from "./utils/constants";
@@ -13,7 +14,7 @@ const server = createServer(async (req, res) => {
       } else if (checkPath(req.url as string) && req.method === "GET") {
         await getUserById(req, res);
       } else if (req.url === "/api/users" && req.method === "POST") {
-        // CREATE USER
+        await createUser(req, res);
       } else if (checkPath(req.url as string) && req.method === "PUT") {
         // UPDATE USER
       } else if (checkPath(req.url as string) && req.method === "DELETE") {

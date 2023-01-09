@@ -11,3 +11,13 @@ export const checkIfValidUUID = (str: string) => {
 
   return regexExp.test(str);
 };
+
+export const getRequestData = async (req: any) => {
+  const buffers = [];
+
+  for await (const chunk of req) {
+    buffers.push(chunk);
+  }
+
+  return JSON.parse(Buffer.concat(buffers).toString());
+};
