@@ -6,3 +6,7 @@ export const STATUS_CODE = {
   NOT_FOUND: 404,
   SERVER_ERROR: 500,
 };
+
+export const RESPONSE_MESSAGES = {
+  NON_EXISTING_ENDPOINT: "You entered a non-existent endpoint",
+};
