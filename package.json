@@ -1,0 +1,23 @@
+{
+  "name": "crud-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.ts",
+  "scripts": {
+    "dev": "nodemon src/index.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KononOleg/crud-api.git"
+  },
+  "author": "KononOleg",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KononOleg/crud-api/issues"
+  },
+  "homepage": "https://github.com/KononOleg/crud-api#readme",
+  "dependencies": {
+    "nodemon": "^2.0.20",
+    "ts-node": "^10.9.1"
+  }
+}
