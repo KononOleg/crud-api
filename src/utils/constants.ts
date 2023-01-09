@@ -9,4 +9,5 @@ export const STATUS_CODE = {
 
 export const RESPONSE_MESSAGES = {
   NON_EXISTING_ENDPOINT: "You entered a non-existent endpoint",
+  SERVER_ERROR: "500 Internal Server Error",
 };
