@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.ts",
   "scripts": {
-    "dev": "nodemon src/index.ts"
+    "start:dev": "nodemon src/index.ts",
+    "start:prod": "tsc  && node ./dist/index.js"
   },
   "repository": {
     "type": "git",
