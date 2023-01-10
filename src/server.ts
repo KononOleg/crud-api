@@ -2,6 +2,7 @@ import { createServer } from "http";
 import { createUser } from "./crud/create";
 import { deleteUser } from "./crud/delete";
 import { getUserById, getUsers } from "./crud/get";
+import { updateUser } from "./crud/update";
 import { RESPONSE_MESSAGES, STATUS_CODE } from "./utils/constants";
 import { checkPath } from "./utils/utils";
 
@@ -16,7 +17,7 @@ const server = createServer(async (req, res) => {
       } else if (req.url === "/api/users" && req.method === "POST") {
         await createUser(req, res);
       } else if (checkPath(req.url as string) && req.method === "PUT") {
-        // UPDATE USER
+        await updateUser(req, res);
       } else if (checkPath(req.url as string) && req.method === "DELETE") {
         await deleteUser(req, res);
       } else {

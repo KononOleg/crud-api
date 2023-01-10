@@ -21,3 +21,16 @@ export const getRequestData = async (req: any) => {
 
   return JSON.parse(Buffer.concat(buffers).toString());
 };
+
+const isStringsArray = (arr: any[]) => arr.every((i) => typeof i === "string");
+
+export const isValidUser = (user: any) => {
+  const { username, age, hobbies } = user;
+  return (
+    typeof username !== "string" ||
+    typeof age !== "number" ||
+    age < 1 ||
+    !Array.isArray(hobbies) ||
+    !isStringsArray(hobbies)
+  );
+};
