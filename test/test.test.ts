@@ -1,7 +1,15 @@
-const supertest = require("supertest");
-require("dotenv").config();
-const request = supertest(`http://localhost:4000`);
+import supertest from "supertest";
+import createServer from "../src/server";
 
+let request: any, server: any;
+beforeAll(() => {
+  server = createServer(3999);
+  request = supertest(server);
+});
+
+afterAll(() => {
+  server.close();
+});
 const url = "/api/users";
 let id = "";
 let user = {};

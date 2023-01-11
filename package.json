@@ -6,7 +6,7 @@
   "scripts": {
     "start:dev": "nodemon src/index.ts",
     "start:prod": "tsc  && node ./dist/index.js",
-    "test": "jest"
+    "test": "jest --config ./test/jest.json"
   },
   "repository": {
     "type": "git",
@@ -20,11 +20,11 @@
   "homepage": "https://github.com/KononOleg/crud-api#readme",
   "dependencies": {
     "dotenv": "^16.0.3",
-    "nodemon": "^2.0.20",
-    "ts-node": "^10.9.1",
     "uuid": "^9.0.0"
   },
   "devDependencies": {
+    "nodemon": "^2.0.20",
+    "ts-node": "^10.9.1",
     "@types/jest": "^29.2.5",
     "@types/supertest": "^2.0.12",
     "@types/uuid": "^9.0.0",
