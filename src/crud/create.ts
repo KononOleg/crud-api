@@ -1,6 +1,6 @@
 import { RESPONSE_MESSAGES, STATUS_CODE } from "../utils/constants";
 import { getRequestData, isValidUser } from "../utils/utils";
-import { uuid } from "uuidv4";
+import { v4 as uuidv4 } from "uuid";
 import users from "../users";
 
 export const createUser = async (req: any, res: any) => {
@@ -13,7 +13,7 @@ export const createUser = async (req: any, res: any) => {
     return;
   }
 
-  const newUser = { id: uuid(), ...user };
+  const newUser = { id: uuidv4(), ...user };
   users.push(newUser);
   res.writeHead(STATUS_CODE.CREATED);
   res.write(JSON.stringify(newUser));

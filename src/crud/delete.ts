@@ -1,11 +1,12 @@
-import { checkIfValidUUID, getId } from "../utils/utils";
+import { getId } from "../utils/utils";
+import { validate as uuidValidate } from "uuid";
 
 import users from "../users";
 import { RESPONSE_MESSAGES, STATUS_CODE } from "../utils/constants";
 
 export const deleteUser = async (req: any, res: any) => {
   const id = getId(req);
-  if (checkIfValidUUID(id)) {
+  if (uuidValidate(id)) {
     const userIndex = users.findIndex((person) => person.id === id);
     if (userIndex !== -1) {
       users.splice(userIndex, 1);
