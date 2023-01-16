@@ -6,7 +6,8 @@
   "scripts": {
     "start:dev": "nodemon src/index.ts",
     "start:prod": "tsc  && node ./dist/index.js",
-    "test": "jest --config ./test/jest.json"
+    "test": "jest --config ./test/jest.json",
+    "start:multi": "ts-node ./src/scaling/scaling.ts"
   },
   "repository": {
     "type": "git",
